@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit {{card.name}}'s Baseball Card</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <h1>Enter a new baseball card</h1>
+
+    <form class="" action="/cards/{{card._id}}" method="post">
+      <div class="">
+        <label for="playerName">Player Name:</label>
+        <input type="text" name="playerName" value="{{card.playerName}}">
+      </div>
+
+      <div class="">
+        <label for="teamName">Team Name:</label>
+        <input type="text" name="teamName" value="{{card.teamName}}">
+      </div>
+
+      <div class="">
+        <label for="year">Card Year:</label>
+        <input type="text" name="year" value="{{card.year}}">
+      </div>
+
+      <div class="">
+        <label for="rookieCard">Rookie Card:</label>
+        <select class="" name="rookieCard">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+
+      <div class="">
+        <label for="condition">Card Condition:</label>
+        <select class="" name="condition">
+          <option value="mint">Mint</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
+          <option value="bad">Bad</option>
+        </select>
+      </div>
+
+      <div class="">
+        <label for="battingAvg">Batting Avg:</label>
+        <input type="text" name="battingAvg" value="{{card.battingAvg}}">
+      </div>
+
+      <div class="">
+        <label for="homeRuns">Home Runs:</label>
+        <input type="number" name="homeRuns" value="{{card.homeRuns}}">
+      </div>
+
+      <div class="">
+        <label for="rbis">RBIs:</label>
+        <input type="text" name="rbis" value="{{card.rbis}}">
+      </div>
+
+      <div class="">
+        <input type="submit" name="submit" value="Store Card">
+      </div>
+    </form>
+  </body>
+</html>

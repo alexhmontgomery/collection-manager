@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Baseball Card Mgr</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <header>
+      <h1>Baseball Card Collection Manager</h1>
+      <nav>
+        <a href="/cards/newcard">New Card</a>
+      </nav>
+    </header>
+
+    <main>
+      <h4>There are {{cards.length}} baseball cards in the collection.</h4>
+
+      <section class="cards">
+        {{#cards}}
+          <div class="baseball-card">
+            <h4>{{playerName}}</h4>
+            <h5>Team: {{teamName}}</h5>
+            <h5>{{year}} Card in {{condition}} condition</h5>
+            {{#rookieCard}}
+            <h5><em>Rookie Card</em></h5>
+            {{/rookieCard}}
+            <table>
+              <tr>
+                <th>Batting Avg</th>
+                <th>Home Runs</th>
+                <th>RBIs</th>
+              </tr>
+              <tr>
+                <td>{{battingAvg}}</td>
+                <td>{{homeRuns}}</td>
+                <td>{{rbis}}</td>
+              </tr>
+            </table>
+            <a href="/cards/{{_id}}/edit">Edit Card</a><br>
+            <a href="/cards/{{_id}}/delete">Delete Card</a>
+          </div>
+        {{/cards}}
+      </section>
+    </main>
+  </body>
+</html>
